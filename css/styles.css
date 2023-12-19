@@ -1,0 +1,159 @@
+/* defining commonly used colours: Lee Wee and Brothers RED and NYP BLUE */
+:root {
+    --lwab_red: #eb2428;
+    --nyp_blue: #0a428a;
+}
+
+/* adding Gothic_A1 font family */
+@font-face {
+    font-family: Gothic_A1;
+    src: url(fonts/Gothic_A1/GothicA1-Thin.ttf);
+    font-weight: 100;
+}
+@font-face {
+    font-family: Gothic_A1;
+    src: url(fonts/Gothic_A1/GothicA1-ExtraLight.ttf);
+    font-weight: 200;
+}
+@font-face {
+    font-family: Gothic_A1;
+    src: url(fonts/Gothic_A1/GothicA1-Light.ttf);
+    font-weight: 300
+}
+@font-face {
+    font-family: Gothic_A1;
+    src: url(fonts/Gothic_A1/GothicA1-Regular.ttf);
+    font-weight: 400;
+}
+@font-face {
+    font-family: Gothic_A1;
+    src: url(fonts/Gothic_A1/GothicA1-Medium.ttf);
+    font-weight: 500;
+}
+@font-face {
+    font-family: Gothic_A1;
+    src: url(fonts/Gothic_A1/GothicA1-SemiBold.ttf);
+    font-weight: 600;
+}
+@font-face {
+    font-family: Gothic_A1;
+    src: url(fonts/Gothic_A1/GothicA1-Bold.ttf);
+    font-weight: 700;
+}
+@font-face {
+    font-family: Gothic_A1;
+    src: url(fonts/Gothic_A1/GothicA1-ExtraBold.ttf);
+    font-weight: 800;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 1024px;
+    margin: 0 auto;
+    box-sizing: content-box;
+    font-family: Gothic_A1, Arial, Helvetica, sans-serif;
+    background: url(images/seamless-white-interlaced-rounded-arc-patterned-background/v880-kul-11.jpg);
+    background-size: 100px
+}
+nav {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    border-bottom: 1px solid grey;
+    z-index: 1;
+}
+.navlinks-flex-container {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+/* Navbar Logo */
+.navlinks-flex-container li:first-child {
+    margin-right: auto;
+}
+.navlinks-flex-container li:first-child a {
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+}
+.navlinks-flex-container img {
+    height: 100%;
+    padding: 10px;
+    transition: all ease-out 0.2s;
+}
+.navlinks-flex-container img:hover {
+    transform: scale(1.04)
+}
+.navlinks-flex-container li:not(:first-child) a {
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    width: 100px;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    font-size: 12px;
+}
+.navlinks-flex-container a:hover {
+    background-color: rgb(248, 248, 248);
+}
+.navlinks-flex-container li:not(:first-child) a span {
+    transform: translate(6px, 1px);
+    transition: all linear 0.15s;
+}
+.navlinks-flex-container li:not(:first-child) a:hover span {
+    transform: translate(6px);
+}
+.navlinks-flex-container li:not(:first-child) a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    display: block;
+    height: 2px;
+    width: 0;
+    background-color: var(--lwab_red);
+    transition: all linear 0.15s;
+}
+.navlinks-flex-container li:not(:first-child) a:hover::after {
+    width: 80px;
+}
+
+/* Home Page */
+.hero-image {
+    position: relative;
+    height: 200px;
+    background: url(images/storefront_placeholder.heic) no-repeat;
+    background-size: cover;
+    background-position-y: -130px;
+}
+.hero-image h1 {
+    position: absolute;
+    top: px;
+    left: 40px;
+    bottom: 40px;
+    font-size: 50px;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+/* Menu Page */
+.menu-flex-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: auto;
+}
+.menu-flex-item {
+    width: 20%;
+    border: 1px solid black;
+}
+.menu-flex-item img {
+    width: 100%;
+}
