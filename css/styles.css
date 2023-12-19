@@ -1,7 +1,11 @@
 /* defining commonly used colours: Lee Wee and Brothers RED and NYP BLUE */
 :root {
-    --lwab_red: #eb2428;
-    --nyp_blue: #0a428a;
+    --lwab-red: #eb2428;
+    --imperial-red: #EE4447;
+    --nyp-blue: #0a428a;
+    --rich-black: #111318;
+    --gunmetal: #2A2F3C;
+    --anti-flash-white: #F3F4F7;
 }
 
 /* adding Gothic_A1 font family */
@@ -56,9 +60,11 @@ body {
     margin: 0 auto;
     box-sizing: content-box;
     font-family: Gothic_A1, Arial, Helvetica, sans-serif;
-    background: url(images/seamless-white-interlaced-rounded-arc-patterned-background/v880-kul-11.jpg);
-    background-size: 100px
+    background: url(../images/seamless-white-interlaced-rounded-arc-patterned-background/v880-kul-11.jpg);
+    background-size: 120px;
 }
+
+/* Navbar */
 nav {
     position: sticky;
     top: 0;
@@ -86,23 +92,24 @@ nav {
 .navlinks-flex-container img {
     height: 100%;
     padding: 10px;
-    transition: all ease-out 0.2s;
+    transition: all ease-out 0.1s;
 }
 .navlinks-flex-container img:hover {
     transform: scale(1.04)
 }
+
 .navlinks-flex-container li:not(:first-child) a {
     display: inline-flex;
     align-items: center;
     height: 100%;
     width: 100px;
     text-decoration: none;
-    color: black;
+    color: var(--gunmetal);
     font-weight: 700;
     font-size: 12px;
 }
 .navlinks-flex-container a:hover {
-    background-color: rgb(248, 248, 248);
+    background-color: var(--anti-flash-white);
 }
 .navlinks-flex-container li:not(:first-child) a span {
     transform: translate(6px, 1px);
@@ -118,8 +125,11 @@ nav {
     display: block;
     height: 2px;
     width: 0;
-    background-color: var(--lwab_red);
-    transition: all linear 0.15s;
+    background-color: var(--imperial-red);
+    transition: all linear 0.1s;
+}
+#active-page-navlink a::after{
+    width: 80px;
 }
 .navlinks-flex-container li:not(:first-child) a:hover::after {
     width: 80px;
@@ -129,7 +139,7 @@ nav {
 .hero-image {
     position: relative;
     height: 200px;
-    background: url(images/storefront_placeholder.heic) no-repeat;
+    background: url(../images/storefront_placeholder.heic);
     background-size: cover;
     background-position-y: -130px;
 }
@@ -151,9 +161,40 @@ nav {
     margin: auto;
 }
 .menu-flex-item {
-    width: 20%;
-    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 300px;
+    border: 1px solid lightgrey;
+    background-color: white;
 }
 .menu-flex-item img {
     width: 100%;
+    border-bottom: 1px solid lightgrey;
+}
+.menu-item-name {
+    flex: 1;
+    font-size: 12px;
+    color: #30384A;
+    font-weight: 600;
+    padding: 8px 10px 8px 10px;
+}
+.menu-item-description {
+    flex: 2;
+    font-size: 8px;
+    color: darkgrey;
+    font-weight: 500;
+    padding: 0 10px 8px 10px;
+}
+.menu-item-price {
+    flex: 1;
+    padding: 0 10px 8px 10px;
+}
+.menu-item-price span:first-child {
+    font-weight: 700;
+    font-size: 22px;
+}
+.menu-item-price span:not(:first-child) {
+    font-weight: 300;
+    font-size: 10px;
 }
