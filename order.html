@@ -17,7 +17,78 @@
             <li><a href="about.html"><span>About Us</span></a></li>
         </ul>
     </nav>
-    <h1>Order</h1>
-    <form action=""></form>
+    <footer>
+        <p>Copyright &copy; 2023-2024 Maverick Chin. All rights reserved.</p>
+    </footer>
+    <form method="get" action="https://jkorpela.fi/cgi-bin/echo.cgi">
+        <div class="order-form-flex-container">
+            <fieldset>
+                <legend>Personal Details</legend>
+                <div class="form-input">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" pattern="[a-z A-Z]*" required>
+                </div>
+                <div class="form-input">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input id="phoneNumber" name="phoneNumber" type="tel" pattern=[0-9]{8} required>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Collection</legend>
+                <div class="form-input">
+                    <label for="collectionDate">Date</label>
+                    <input id="collectionDate" name="collectionDate" type="date">
+                </div>
+                <div class="form-input">
+                    <label for="collectionTime">Time</label>
+                    <input id="collectionTime" name="collectionTime" type="time" min="11:00:00" max="14:00:00">
+                </div>
+                <div class="form-input">
+                    <span>Dining Option</span><br>
+                    <label for="dineIn">Dine-In</label>
+                    <input id="dineIn" name="diningOption" value="dineIn" type="radio">
+                    <label for="takeaway">Takeaway</label>
+                    <input id="takeaway" name="diningOption" value="takeaway" type="radio">
+                </div>
+            </fieldset>  
+        </div>
+        <fieldset>
+            <legend>Order</legend>
+            <div class="form-input">
+                <span>Nasi Lemak Dish</span><br>
+                <label for="honeyGlazed">Honey Glazed Chicken Wing</label>
+                <input id="honeyGlazed" name="nasiLemakDish" value="honeyGlazed" type="radio">
+                <label for="chickenCutlet">Chicken Cutlet</label>
+                <input id="chickenCutlet" name="nasiLemakDish" value="chickenCutlet" type="radio">
+                <label for="3jointChickenWing">Fried 3-Joint Chicken Wing</label>
+                <input id="3jointChickenWing" name="nasiLemakDish" value="3jointChickenWing" type="radio">
+                <br><label for="nasiLemakDishQty">Quantity</label>
+                <input id="nasiLemakDishQty" name="nasiLemakDishQty" type="number" min="0" value="0">
+            </div>
+            <div class="form-input">
+                <span>Otah</span><br>
+                <label for="originalSpicy">Original Fish</label>
+                <input id="originalSpicy" name="otahDish" value="originalSpicy" type="radio">
+                <label for="originalNonSpicy">Original Non Spicy</label>
+                <input id="originalNonSpicy" name="otahDish" value="originalNonSpicy" type="radio">
+                <label for="bananaLeafFish">Banana Leaf Fish</label>
+                <input id="bananaLeafFishg" name="otahDish" value="bananaLeafFish" type="radio">
+                <br><label for="otahDishQty">Quantity</label>
+                <input id="otahDishQty" name="otahDishQty" type="number" min="0" value="0">
+            </div>
+            <div class="form-input">
+                <span>Condiments</span><br>
+                <label for="ikanBilis120g">Ikan Bilis 120g</label>
+                <input id="ikanBilis120g" name="condiments" value="ikanBilis120g" type="radio">
+                <label for="ikanBilisPeanuts200g">Ikan Bilis and Peanuts 200g</label>
+                <input id="ikanBilisPeanuts200g" name="condiments" value="ikanBilisPeanuts200g" type="radio">
+                <label for="sambalChili250g">Sambal Chili 250g</label>
+                <input id="sambalChili250g" name="condiments" value="sambalChili250g" type="radio">
+                <br><label for="condimentsQty">Quantity</label>
+                <input id="condimentsQty" name="condimentsQty" type="number" min="0" value="0">
+            </div>
+        </fieldset>
+        <button type="submit">Submit</button>
+    </form> 
 </body>
 </html>

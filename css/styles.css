@@ -64,6 +64,7 @@ html {
     scroll-snap-type: y mandatory;
 }
 body {
+    position: relative;
     width: 1024px;
     margin: 0 auto;
     box-sizing: content-box;
@@ -94,7 +95,7 @@ nav {
     margin-right: auto;
 }
 .navlinks-flex-container li:first-child a {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     height: 100%;
 }
@@ -104,7 +105,10 @@ nav {
     transition: all ease-out 0.1s;
 }
 .navlinks-flex-container img:hover {
-    transform: scale(1.04)
+    transform: scale(1.04);
+}
+#active-page-navlink:first-child img {
+    background-image: url();
 }
 
 .navlinks-flex-container li:not(:first-child) a {
@@ -137,11 +141,30 @@ nav {
     background-color: var(--imperial-red);
     transition: all linear 0.1s;
 }
+#active-page-navlink a {
+    background-image: url();
+}
 #active-page-navlink a::after{
     width: 80px;
 }
 .navlinks-flex-container li:not(:first-child) a:hover::after {
     width: 80px;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--gunmetal);
+    z-index: 1;
+}
+footer p {
+    color: white;
+    font-weight: 300;
+    font-size: 6px;
+    text-align: center;
+    padding: 2px;
 }
 
 /* Home Page */
@@ -154,7 +177,7 @@ nav {
 }
 .hero-image h1 {
     position: absolute;
-    top: px;
+    top: 20px;
     left: 40px;
     bottom: 40px;
     font-size: 50px;
@@ -222,4 +245,17 @@ nav {
 .menu-item-price span:not(:first-child) {
     font-size: 10px;
     color: var(--gunmetal);
+}
+
+/* Order Page */
+form {
+    width: 70%;
+    margin: auto;
+    border: 1px solid lightgrey;
+}
+.order-form-flex-container {
+    display: flex;
+}
+.order-form-flex-container > * {
+    flex: 1;
 }
