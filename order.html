@@ -9,93 +9,198 @@
 </head>
 <body>
     <nav>
-        <ul class="navlinks-flex-container">
-            <li><a href="index.html"><img src="images/Logos/lee_wee_and_brothers_in_nyp_logo.png" alt="index.html"></a></li>
-            <li><a href="menu.html"><span>Menu</span></a></li>
-            <li id="active-page-navlink"><a href="order.html"><span>Order</span></a></li>
-            <li><a href="registration.html"><span>Register</span></a></li>
-            <li><a href="about.html"><span>About Us</span></a></li>
+        <ul>
+            <li class="navbar-logo">
+                <a href="index.html">
+                    <img src="images/Logos/lee_wee_and_brothers_in_nyp_logo.png" alt="index.html">
+                </a>
+            </li>
+            <li>
+                <a href="menu.html">
+                    <span>Menu</span>
+                </a>
+            </li>
+            <li>
+                <a href="order.html" class="navlink-active">
+                    <span>Order</span>
+                </a>
+            </li>
+            <li>
+                <a href="registration.html">
+                    <span>Register</span>
+                </a>
+            </li>
+            <li>
+                <a href="about.html">
+                    <span>About Us</span>
+                </a>
+            </li>
         </ul>
     </nav>
+    <main>
+        <form method="get" action="https://jkorpela.fi/cgi-bin/echo.cgi">
+            <div class="order-form-flex-container">
+                <fieldset class="personal-details-fieldset">
+                    <legend>Personal Details</legend>
+                    <div class="form-input">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" pattern="[a-z A-Z]*" required>
+                    </div>
+                    <div class="form-input">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input id="phoneNumber" name="phoneNumber" type="tel" pattern=[89]\d{3}\s?\d{4} placeholder="(9/8)xxx xxxx">
+                    </div>
+                </fieldset>
+                <fieldset class="collection-fieldset">
+                    <legend>Collection</legend>
+                    <div class="collectionDateDiv">
+                        <label for="collectionDate">Date</label>
+                        <input id="collectionDate" name="collectionDate" type="date"><br>
+                        <label for="collectionTime">Time</label>
+                        <input id="collectionTime" name="collectionTime" type="time" min="11:00:00" max="14:00:00">
+                    </div>
+                    <div class="diningOptionDiv">
+                        <span>Dining Option</span><br>
+                        <label for="dineIn">Dine-In</label>
+                        <input id="dineIn" name="diningOption" value="dineIn" type="radio">
+                        <label for="takeaway">Takeaway</label>
+                        <input id="takeaway" name="diningOption" value="takeaway" type="radio">
+                    </div>  
+                </fieldset>  
+            </div>
+            <fieldset>
+                <legend>Order Details</legend>
+                <h1 class="order-category-header">Nasi Lemak</h1>
+                <div class="order-items-container">
+                    <div class="order-item">
+                        <label for="honeyGlazedQty">
+                            <div class="order-item-img-div">
+                                <img src="images/Menu/honey_glazed_chicken_wing_nasi_lemak.jpg" alt="Honey Glazed Chicken Wing Nasi Lemak">
+                            </div>
+                            <p class="order-item-name">Honey Glazed Chicken Wing</p>
+                            <p class="order-item-price">
+                                <span>$5.40</span>
+                                <span>(U.P. $6.00)</span>
+                            </p>
+                        </label>
+                        <input id="honeyGlazedQty" name="honeyGlazedQty" type="number" value="0">
+                    </div>
+                    <div class="order-item">
+                        <label for="chickenCutletQty">
+                            <div class="order-item-img-div">
+                                <img src="images/Menu/chicken_cutlet_nasi_lemak.jpg" alt="Chicken Cutlet Nasi Lemak">
+                            </div>
+                            <p class="order-item-name">Chicken Cutlet</p>
+                            <p class="order-item-price">
+                                <span>$5.20</span>
+                                <span>(U.P. $5.90)</span>
+                            </p>
+                        </label>
+                        <input id="chickenCutletQty" name="chickenCutletQty" type="number" value="0">
+                    </div>
+                    <div class="order-item">
+                        <label for="3jointChickenWingQty">
+                            <div class="order-item-img-div">
+                                <img src="images/Menu/fried_3-joint_chicken_wing_nasi_lemak.jpg" alt="Fried 3 Joint Chicken Wing Nasi Lemak">
+                            </div>
+                            <p class="order-item-name">Fried 3-Joint Chicken Wing</p>
+                            <p class="order-item-price">
+                                <span>$5.60</span>
+                                <span>(U.P. $6.30)</span>
+                            </p>
+                        </label>
+                        <input id="3jointChickenWingQty" name="3jointChickenWingQty" type="number" value="0">
+                    </div>
+                </div>
+                <h1 class="order-category-header">Otah</h1>
+                <div class="order-items-container">
+                    <div class="order-item">
+                        <label for="originalSpicyQty">
+                            <div class="order-item-img-div">
+                                <img src="images/Menu/original_fish_otah.jpg" alt="Original Fish Otah">
+                            </div>
+                            <p class="order-item-name">Original Fish Otah</p>
+                            <p class="order-item-price">
+                                <span>$0.70</span>
+                                <span>(U.P. $0.90)</span>
+                            </p>
+                        </label>
+                        <input id="originalSpicyQty" name="originalSpicyQty" type="number" value="0">
+                    </div>
+                    <div class="order-item">
+                        <label for="originalNonSpicyQty">
+                            <div class="order-item-img-div">
+                                <img src="images/Menu/original_non_spicy_otah.jpg" alt="Original Non Spicy Otah">
+                            </div>
+                            <p class="order-item-name">Original Non Spicy</p>
+                            <p class="order-item-price">
+                                <span>$0.70</span>
+                                <span>(U.P. $0.90)</span>
+                            </p>
+                        </label>
+                        <input id="originalNonSpicyQty" name="originalNonSpicyQty" type="number" value="0">
+                    </div>
+                    <div class="order-item">
+                        <label for="bananaLeafFishQty">
+                            <div class="order-item-img-div">
+                                <img src="images/Menu/banana_leaf_fish_otah.jpg" alt="Banana Leaf Fish Otah">
+                            </div>
+                            <p class="order-item-name">Banana Leaf Fish</p>
+                            <p class="order-item-price">
+                                <span>$1.60</span>
+                                <span>(U.P. $1.90)</span>
+                            </p>
+                        </label>
+                        <input id="bananaLeafFishQty" name="bananaLeafFishQty" type="number" value="0">
+                    </div>
+                </div>
+                <div class="order-category-form-input">
+                    <h1 class="order-category-header">Condiments</h1>
+                    <div class="order-items-container">
+                        <div class="order-item">
+                            <label for="ikanBilis120gQty">
+                                <div class="order-item-img-div">
+                                    <img src="images/Menu/ikan_bilis.jpg" alt="Ikan Bilis">
+                                </div>
+                                <p class="order-item-name">Ikan Bilis 120g</p>
+                                <p class="order-item-price">
+                                    <span>$5.90</span>
+                                </p>
+                            </label>
+                            <input id="ikanBilis120gQty" name="ikanBilis120gQty" type="number" value="0">
+                        </div>
+                        <div class="order-item">
+                            <label for="ikanBilisPeanuts200gQty">
+                                <div class="order-item-img-div">
+                                    <img src="images/Menu/ikan_bilis_and_peanuts.jpg" alt="Ikan Bilis and Peanuts">
+                                </div>
+                                <p class="order-item-name">Ikan Bilis and Peanuts 200g</p>
+                                <p class="order-item-price">
+                                    <span>$5.90</span>
+                                </p>
+                            </label>
+                            <input id="ikanBilisPeanuts200gQty" name="ikanBilisPeanuts200gQty" type="number" value="0">
+                        </div>
+                        <div class="order-item">
+                            <label for="sambalChili250gQty">
+                                <div class="order-item-img-div">
+                                    <img src="images/Menu/sambal_chili.jpg" alt="Sambal Chili">
+                                </div>
+                                <p class="order-item-name">Sambal Chili 250g</p>
+                                <p class="order-item-price">
+                                    <span>$6.90</span>
+                                </p>
+                            </label>
+                            <input id="sambalChili250gQty" name="sambalChili250gQty" type="number" value="0">
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <button type="submit">Submit</button>
+        <div class="order-item"></form> </div>
+    </main>
     <footer>
         <p>Copyright &copy; 2023-2024 Maverick Chin. All rights reserved.</p>
     </footer>
-    <form method="get" action="https://jkorpela.fi/cgi-bin/echo.cgi">
-        <div class="order-form-flex-container">
-            <fieldset class="personal-details-fieldset">
-                <legend>Personal Details</legend>
-                <div class="form-input">
-                    <label for="name">Name</label>
-                    <input id="name" name="name" type="text" pattern="[a-z A-Z]*" required>
-                </div>
-                <div class="form-input">
-                    <label for="phoneNumber">Phone Number</label>
-                    <input id="phoneNumber" name="phoneNumber" type="tel" pattern=[89]\d{3}\s?\d{4} placeholder="(9/8)xxx xxxx">
-                </div>
-            </fieldset>
-            <fieldset class="collection-fieldset">
-                <legend>Collection</legend>
-                <div class="collectionDateDiv">
-                    <label for="collectionDate">Date</label>
-                    <input id="collectionDate" name="collectionDate" type="date"><br>
-                    <label for="collectionTime">Time</label>
-                    <input id="collectionTime" name="collectionTime" type="time" min="11:00:00" max="14:00:00">
-                </div>
-                <div class="diningOptionDiv">
-                    <span>Dining Option</span><br>
-                    <label for="dineIn">Dine-In</label>
-                    <input id="dineIn" name="diningOption" value="dineIn" type="radio">
-                    <label for="takeaway">Takeaway</label>
-                    <input id="takeaway" name="diningOption" value="takeaway" type="radio">
-                </div>  
-            </fieldset>  
-        </div>
-        <fieldset>
-            <legend>Order Details</legend>
-            <h2>Nasi Lemak</h2>
-            <div class="order-category-form-input">
-                <div class="order-item-form-input">
-                    <label for="honeyGlazedQty">
-                        <img src="images/Menu/honey_glazed_chicken_wing_nasi_lemak.jpg" alt="Honey Glazed Chicken Wing Nasi Lemak">
-                        <p>Honey Glazed Chicken Wing</p>
-                    </label>
-                    <input id="honeyGlazedQty" name="honeyGlazedQty" type="number">
-                </div>
-                <div class="order-item-form-input">
-                    <label for="chickenCutletQty">
-                        <img src="images/Menu/chicken_cutlet_nasi_lemak.jpg" alt="Chicken Cutlet Nasi Lemak">
-                        <p>Chicken Cutlet</p>
-                    </label>
-                    <input id="chickenCutletQty" name="chickenCutletQty" type="number">
-                </div>
-                <div class="order-item-form-input">
-                    <label for="3jointChickenWingQty">
-                        <img src="images/Menu/fried_3-joint_chicken_wing_nasi_lemak.jpg" alt="Fried 3 Joint Chicken Wing Nasi Lemak">
-                        <p>Fried 3-Joint Chicken Wing</p>
-                    </label>
-                    <input id="3jointChickenWingQty" name="3jointChickenWingQty" type="number">
-                </div>
-            </div>
-            <div class="order-category-form-input">
-                <span>Otah</span><br>
-                <label for="originalSpicyQty">Original Fish</label>
-                <input id="originalSpicyQty" name="originalSpicyQty" type="number">
-                <label for="originalNonSpicyQty">Original Non Spicy</label>
-                <input id="originalNonSpicyQty" name="originalNonSpicyQty" type="number">
-                <label for="bananaLeafFishQty">Banana Leaf Fish</label>
-                <input id="bananaLeafFishQty" name="bananaLeafFishQty" type="number">
-            </div>
-            <div class="order-category-form-input">
-                <span>Condiments</span><br>
-                <label for="ikanBilis120gQty">Ikan Bilis 120g</label>
-                <input id="ikanBilis120gQty" name="ikanBilis120gQty" type="number">
-                <label for="ikanBilisPeanuts200gQty">Ikan Bilis and Peanuts 200g</label>
-                <input id="ikanBilisPeanuts200gQty" name="ikanBilisPeanuts200gQty" type="number">
-                <label for="sambalChili250gQty">Sambal Chili 250g</label>
-                <input id="sambalChili250gQty" name="sambalChili250gQty" type="number">
-            </div>
-        </fieldset>
-        <button type="submit">Submit</button>
-    </form> 
 </body>
 </html>
