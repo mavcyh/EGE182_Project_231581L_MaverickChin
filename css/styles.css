@@ -68,9 +68,11 @@ body {
     width: 1024px;
     margin: 0 auto;
     box-sizing: content-box;
+    border: 1px solid lightgrey;
     font-family: Gothic_A1, Arial, Helvetica, sans-serif;
     background: url(../images/seamless-white-interlaced-rounded-arc-patterned-background/v880-kul-11.jpg);
     background-size: 120px;
+    background-attachment: fixed;
     overflow-x: hidden;
 }
 
@@ -110,6 +112,7 @@ nav {
 #active-page-navlink:first-child img {
     background-image: url();
 }
+/* */
 
 .navlinks-flex-container li:not(:first-child) a {
     display: inline-flex;
@@ -155,7 +158,8 @@ nav {
 footer {
     position: fixed;
     bottom: 0;
-    width: 100%;
+    width: 1024px;
+    margin: 0 auto;
     background-color: var(--gunmetal);
     z-index: 1;
 }
@@ -216,16 +220,29 @@ footer p {
     border-radius: 3px;
     overflow: hidden;
     background-color: white;
+    text-decoration: none;
+}
+.menu-item-img-div {
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-bottom: 1px solid lightgrey;
 }
 .menu-flex-item img {
     width: 100%;
-    border-bottom: 1px solid lightgrey;
+    transition: all 0.1s linear;
+}
+.menu-flex-item:hover {
+    box-shadow: 1px 1px 10px lightgrey;
+}
+.menu-flex-item:hover img {
+    transform: scale(1.05);
 }
 .menu-item-name {
     font-size: 14px;
     color: var(--charcoal);
     font-weight: 700;
-    margin: 4px 10px 8px 10px;
+    margin: 8px 10px;
 }
 .menu-item-description {
     height:36px;
@@ -251,11 +268,50 @@ footer p {
 form {
     width: 70%;
     margin: auto;
-    border: 1px solid lightgrey;
+    box-sizing: content-box;
+    border-left: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+    font-size: 12px;
+    padding: top 10px;
 }
-.order-form-flex-container {
+form legend {
+    font-family: Satisfy;
+    font-size: 20px;
+    padding: 0 10px;
+}
+form fieldset {
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 6px;
+}
+.order-form-flex-container, .collection-fieldset{
     display: flex;
 }
-.order-form-flex-container > * {
+.personal-details-fieldset {
+    flex: 3;
+    margin-right: 10px;
+}
+.collection-fieldset {
+    flex: 5;
+    display: flex;
+}
+.collectionDateDiv {
+    flex: 3;
+}
+.diningOptionDiv {
+    flex: 2;
+}
+.order-category-form-input {
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+.order-item-form-input {
     flex: 1;
+}
+.order-item-form-input img {
+    width: 100%;
+}
+form button[type="submit"] {
+    width: 100%;
 }
