@@ -70,7 +70,6 @@
 }   
 html {
     scroll-snap-type: y mandatory;
-    zoom: 250%;
 }
 body {
     position: relative;
@@ -154,7 +153,8 @@ nav li + li a:hover::after, nav li + li .navlink-active::after {
 .navbar-logo a:hover img {
     transform: translate(0);
 }
-.navbar-logo a:hover::after, .navbar-logo .navlink-active::after {
+.navbar-logo a:hover::after,
+.navbar-logo .navlink-active::after {
     width: 136px;
 }
 /* NAVBAR END */
@@ -174,6 +174,9 @@ footer p {
     text-align: center;
     padding: 2px;
 }
+.footer-padding {
+    height: 12px;
+}
 /* FOOTER END */
 
 /* HOME PAGE */
@@ -181,12 +184,22 @@ footer p {
     position: relative;
     overflow: hidden;
     height: 320px;
+    border-bottom: 1px solid grey;
+    margin-bottom: 10px;
 }
 .homepage-hero-image > img {
-    position: absolute;
-    top: -120px;
     width: 100%;
     filter: brightness(45%);
+    animation: parallax linear;
+    animation-timeline: scroll(root);
+}
+@keyframes parallax {
+    from {
+        transform: translateY(-120px)
+    }
+    to {
+        transform: translateY(-320px)
+    }
 }
 .homepage-order-online img {
     position: absolute;
@@ -206,27 +219,70 @@ footer p {
     top: 230px;
     left: 50%;
     transform: translateX(-50%);
+}
+.homepage-opening-promotion,
+.homepage-register-now,
+.homepage-learn-more {
+    display: flex;
+    width: 80%;
+    height: 210px;
+    margin: 0 auto 20px auto;
+}
+.homepage-opening-promotion-description,
+.homepage-register-now-description,
+.homepage-learn-more-description {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+.homepage-opening-promotion-description h1,
+.homepage-register-now-description h1,
+.homepage-learn-more-description h1 {
+    margin: 8px;
+}
+.homepage-opening-promotion-description p,
+.homepage-register-now-description p,
+.homepage-learn-more-description p {
+    margin: 8px;
+    font-size: 12px;
+}
+.homepage-opening-promotion-description a,
+.homepage-register-now-description a,
+.homepage-learn-more-description a {
+    margin: 8px;
+    font-size: 15px;
+}
+.homepage-opening-promotion-images,
+.homepage-register-now-images,
+.homepage-learn-more-images {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+.homepage-opening-promotion-images img,
+.homepage-register-now-images img,
+.homepage-learn-more-images img {
+    height: 100%;
+}
+
+.homepage-action-button {
     text-decoration: none;
     background-color: var(--anti-flash-white);
     color: var(--gunmetal);
     border-radius: 2px;
     padding: 8px 12px;
     font-size: 12px;
+    font-weight: 600;
     transition: all linear 0.1s;
 }
-.homepage-order-online a:hover {
+.homepage-action-button:hover {
     background-color: var(--lwab-red);
     color: var(--anti-flash-white);
 }
-.homepage-hero-image > * {
-    animation: parallax linear;
-    animation-timeline: scroll();
-}
-@keyframes parallax {
-    to {
-        transform: translateY(-200px)
-    }
-}
+
 
 /* HOME PAGE END*/
 
