@@ -4,8 +4,8 @@
     --imperial-red: #EE4447;
     --nyp-blue: #0a428a;
     --rich-black: #111318;
-    --charcoal: #30384A;
-    --gunmetal: #2A2F3C;
+    --gunmetal: #1F262A;
+    --paynegray: #4E5F6A;
     --anti-flash-white: #F3F4F7;
 }
 
@@ -54,25 +54,35 @@
     font-family: Satisfy;
     src: url(../fonts/Satisfy/Satisfy-Regular.ttf);
 }
-
+@font-face {
+    font-family: Soviet-Style;
+    src: url(../fonts/Soviet_Style/soviet\ style.ttf)
+}
+@font-face {
+    font-family: Soviet-Style;
+    src: url(../fonts/Soviet_Style/soviet\ style\ italic.ttf);
+    font-style: italic;
+}
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
+}   
 html {
     scroll-snap-type: y mandatory;
+    zoom: 250%;
 }
 body {
     position: relative;
     width: 1024px;
     margin: 0 auto;
     font-family: Gothic_A1, Arial, Helvetica, sans-serif;
-    background: url(../images/seamless-white-interlaced-rounded-arc-patterned-background/v880-kul-11.jpg);
-    background-size: 120px;
     overflow-x: hidden;
 }
-
+.tesselated-background {
+    background: url(../images/website_background_tesellation.jpg);
+    background-size: 140px;
+}
 /* NAVBAR */
 nav {
     position: sticky;
@@ -167,6 +177,57 @@ footer p {
 /* FOOTER END */
 
 /* HOME PAGE */
+.homepage-hero-image {
+    position: relative;
+    overflow: hidden;
+    height: 320px;
+}
+.homepage-hero-image > img {
+    position: absolute;
+    top: -120px;
+    width: 100%;
+    filter: brightness(45%);
+}
+.homepage-order-online img {
+    position: absolute;
+    width: 240px;
+    top: 60px;
+    left: 250px;
+}
+.homepage-order-online h1 {
+    position: absolute;
+    top: 80px;
+    left: 500px;
+    padding: 20px;
+    color: var(--anti-flash-white);
+}
+.homepage-order-online a {
+    position: absolute;
+    top: 230px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    background-color: var(--anti-flash-white);
+    color: var(--gunmetal);
+    border-radius: 2px;
+    padding: 8px 12px;
+    font-size: 12px;
+    transition: all linear 0.1s;
+}
+.homepage-order-online a:hover {
+    background-color: var(--lwab-red);
+    color: var(--anti-flash-white);
+}
+.homepage-hero-image > * {
+    animation: parallax linear;
+    animation-timeline: scroll();
+}
+@keyframes parallax {
+    to {
+        transform: translateY(-200px)
+    }
+}
+
 /* HOME PAGE END*/
 
 /* MENU PAGE */
@@ -177,7 +238,7 @@ footer p {
     border: 1px solid grey;
     background-color: rgba(128, 128, 128, 0.25);
     scroll-snap-align: start;
-    scroll-margin-top: 60px;
+    scroll-margin-top: 54px;
 }   
 .menu-category-header h1 {
     font-family: Satisfy;
@@ -220,7 +281,7 @@ footer p {
 }
 .menu-item-name {
     font-size: 14px;
-    color: var(--charcoal);
+    color: var(--gunmetal);
     font-weight: 700;
     margin: 10px;
 }
@@ -237,7 +298,7 @@ footer p {
 .menu-item-price span:first-child {
     font-weight: 700;
     font-size: 22px;
-    color: var(--charcoal);
+    color: var(--gunmetal);
 }
 .menu-item-price span + span {
     font-size: 10px;
@@ -249,39 +310,125 @@ footer p {
 form {
     width: 70%;
     margin: auto;
-    box-sizing: content-box;
-    border-left: 1px solid lightgrey;
-    border-right: 1px solid lightgrey;
     font-size: 12px;
     padding: top 10px;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 form legend {
-    font-size: 20px;
-    padding: 0 10px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0 6px;
 }
 form fieldset {
     padding: 10px;
-    border: 1px solid grey;
-    border-radius: 6px;
+    border: 1px solid var(--gunmetal);
+    border-radius: 4px;
 }
-.order-form-flex-container, .collection-fieldset{
+.order-form-flex-container { /*Flexbox for Contact Details and Collection fieldset*/
     display: flex;
-}
-.personal-details-fieldset {
-    flex: 3;
-    margin-right: 10px;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 .collection-fieldset {
-    flex: 5;
     display: flex;
 }
-.collectionDateDiv {
-    flex: 3;
+.contact-details-fieldset {
+    flex: 1;
 }
-.diningOptionDiv {
+.collection-fieldset {
     flex: 2;
+    display: flex;
 }
+.collection-date, .dining-option {
+    flex: 1;
+    margin-top: 8px;
+}
+
+.order-form-input {
+    position: relative;
+    margin-bottom: 10px;
+}
+.order-form-input label {
+    cursor: pointer;
+}
+.order-form-input img {
+    height: 16px;
+    padding-right: 3px;
+}
+.order-form-input span {
+    position: absolute;
+    cursor: text;
+    top: 4px;
+    left: 26px;
+    font-size: 6px;
+    color: darkslategrey;
+}
+.order-form-input input {
+    font-size: 8px;
+    font-weight: 500;
+    color: var(--gunmetal);
+    height: 28px;
+    padding: 8px 2px 0 2px;
+}
+.order-form-input input[name="name"] {
+    width: 160px;
+}
+.order-form-input input[name="phoneNumber"] {
+    width: 70px;
+}
+.collection-date input[type="time"]{
+    width: 80px;
+}
+label[for="collectionDate"], .dining-option p {
+    display: block;
+    margin-bottom: 6px;
+}
+.dining-option label {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    height: 22px;
+    width: 80px;
+    transition: all linear 0.1s;
+}
+.dining-option label span {
+    position: absolute;
+    bottom: 0;
+    left: 28px;
+    color: var(--paynegray);
+    font-weight: 600;
+}
+.dining-option input {
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+}
+/* Dine In Option */
+label[for="dineIn"] {
+    background: url(../images/Icons/icons8-restaurant-96-unselected.png) no-repeat;
+    background-size: contain;
+}
+label[for="dineIn"]:hover, input[value="dineIn"]:checked + label {
+    background: url(../images/Icons/icons8-restaurant-96-selected.png) no-repeat;
+    background-size: contain;
+}
+label[for="takeaway"] {
+    background: url(../images/Icons/icons8-take-away-food-96-unselected.png) no-repeat;
+    background-size: contain;
+}
+label[for="takeaway"]:hover, input[value="takeaway"]:checked + label {
+    background: url(../images/Icons/icons8-take-away-food-96-selected.png) no-repeat;
+    background-size: contain;
+}
+
+.dining-option input:checked + label span {
+    color: var(--gunmetal);
+}
+.dining-option label:hover {
+    transform: translate(0, -1px);
+}
+/* Order Fieldset */
 .order-category-header {
     width: 80%;
     margin: 0 auto;
@@ -323,7 +470,7 @@ form fieldset {
 }
 .order-item-name {
     font-size: 10px;
-    color: var(--charcoal);
+    color: var(--gunmetal);
     font-weight: 700;
     margin: 8px;
 }
@@ -333,13 +480,13 @@ form fieldset {
 .order-item-price span:first-child {
     font-weight: 700;
     font-size: 16px;
-    color: var(--charcoal);
+    color: var(--gunmetal);
 }
 .order-item-price span + span {
     font-size: 8px;
     color: var(--gunmetal);
 }
-.order-item input {
+.order-item input[type="number"] {
     width: 38px;
     position: absolute;
     bottom: 11px;
@@ -349,3 +496,8 @@ form button[type="submit"] {
     width: 100%;
 }
 
+/* REGISTRATION PAGE */
+/* REGISTRATION PAGE END */
+
+/* ABOUT US PAGE */
+/* ABOUT US PAGE END */

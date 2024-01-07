@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order</title>
-    <link rel="icon" type="image/png" href="images/Logos/lee_wee_and_brothers_logo_small.png">
+    <link rel="icon" type="image/png" href="images/Logos/lwb_favicon.png">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
         <ul>
             <li class="navbar-logo">
                 <a href="index.html">
-                    <img src="images/Logos/lee_wee_and_brothers_in_nyp_logo.png" alt="index.html">
+                    <img src="images/Logos/lwb_at_nyp_logo.png" alt="index.html">
                 </a>
             </li>
             <li>
@@ -40,36 +40,45 @@
     <main>
         <form method="get" action="https://jkorpela.fi/cgi-bin/echo.cgi">
             <div class="order-form-flex-container">
-                <fieldset class="personal-details-fieldset">
-                    <legend>Personal Details</legend>
-                    <div class="form-input">
-                        <label for="name">Name</label>
+                <fieldset class="contact-details-fieldset">
+                    <legend>Contact Details</legend>
+                    <div class="order-form-input">
+                        <label for="name">
+                            <img src="images/Icons/icons8-person-96.png" alt="">
+                            <span>Name</span>
+                        </label>
                         <input id="name" name="name" type="text" pattern="[a-z A-Z]*" required>
                     </div>
-                    <div class="form-input">
-                        <label for="phoneNumber">Phone Number</label>
-                        <input id="phoneNumber" name="phoneNumber" type="tel" pattern=[89]\d{3}\s?\d{4} placeholder="(9/8)xxx xxxx">
+                    <div class="order-form-input">
+                        <label for="phoneNumber">
+                            <img src="images/Icons/icons8-phone-96.png" alt="">
+                            <span>Phone</span>
+                        </label>
+                        <input id="phoneNumber" name="phoneNumber" type="tel" pattern=[89]\d{3}\s?\d{4}>
                     </div>
                 </fieldset>
                 <fieldset class="collection-fieldset">
                     <legend>Collection</legend>
-                    <div class="collectionDateDiv">
-                        <label for="collectionDate">Date</label>
-                        <input id="collectionDate" name="collectionDate" type="date"><br>
-                        <label for="collectionTime">Time</label>
-                        <input id="collectionTime" name="collectionTime" type="time" min="11:00:00" max="14:00:00">
+                    <div class="collection-date">
+                        <label for="collectionDate">Date and Time :</label>
+                        <input id="collectionDate" name="collectionDate" type="date">
+                        <input id="collectionTime" name="collectionTime" type="time" min="11:00:00" max="14:00:00" step="300">
                     </div>
-                    <div class="diningOptionDiv">
-                        <span>Dining Option</span><br>
-                        <label for="dineIn">Dine-In</label>
-                        <input id="dineIn" name="diningOption" value="dineIn" type="radio">
-                        <label for="takeaway">Takeaway</label>
+                    <div class="dining-option">
+                        <p>Dining Option :</p>
+                        <input id="dineIn" name="diningOption" value="dineIn" type="radio" checked>
+                        <label for="dineIn">
+                            <span>Dine In</span>
+                        </label>
                         <input id="takeaway" name="diningOption" value="takeaway" type="radio">
+                        <label for="takeaway">
+                            <span>Takeaway</span>
+                        </label>
                     </div>  
-                </fieldset>  
+                </fieldset>
             </div>
             <fieldset>
-                <legend>Order Details</legend>
+                <legend>Order</legend>
                 <h1 class="order-category-header">Nasi Lemak</h1>
                 <div class="order-items-container">
                     <div class="order-item">
@@ -83,7 +92,7 @@
                                 <span>(U.P. $6.00)</span>
                             </p>
                         </label>
-                        <input id="honeyGlazedQty" name="honeyGlazedQty" type="number" value="0">
+                        <input id="honeyGlazedQty" name="honeyGlazedQty" type="number" placeholder="0">
                     </div>
                     <div class="order-item">
                         <label for="chickenCutletQty">
@@ -96,7 +105,7 @@
                                 <span>(U.P. $5.90)</span>
                             </p>
                         </label>
-                        <input id="chickenCutletQty" name="chickenCutletQty" type="number" value="0">
+                        <input id="chickenCutletQty" name="chickenCutletQty" type="number" placeholder="0">
                     </div>
                     <div class="order-item">
                         <label for="3jointChickenWingQty">
@@ -109,7 +118,7 @@
                                 <span>(U.P. $6.30)</span>
                             </p>
                         </label>
-                        <input id="3jointChickenWingQty" name="3jointChickenWingQty" type="number" value="0">
+                        <input id="3jointChickenWingQty" name="3jointChickenWingQty" type="number" placeholder="0">
                     </div>
                 </div>
                 <h1 class="order-category-header">Otah</h1>
@@ -125,7 +134,7 @@
                                 <span>(U.P. $0.90)</span>
                             </p>
                         </label>
-                        <input id="originalSpicyQty" name="originalSpicyQty" type="number" value="0">
+                        <input id="originalSpicyQty" name="originalSpicyQty" type="number" placeholder="0">
                     </div>
                     <div class="order-item">
                         <label for="originalNonSpicyQty">
@@ -138,7 +147,7 @@
                                 <span>(U.P. $0.90)</span>
                             </p>
                         </label>
-                        <input id="originalNonSpicyQty" name="originalNonSpicyQty" type="number" value="0">
+                        <input id="originalNonSpicyQty" name="originalNonSpicyQty" type="number" placeholder="0">
                     </div>
                     <div class="order-item">
                         <label for="bananaLeafFishQty">
@@ -151,10 +160,10 @@
                                 <span>(U.P. $1.90)</span>
                             </p>
                         </label>
-                        <input id="bananaLeafFishQty" name="bananaLeafFishQty" type="number" value="0">
+                        <input id="bananaLeafFishQty" name="bananaLeafFishQty" type="number" placeholder="0">
                     </div>
                 </div>
-                <div class="order-category-form-input">
+                <div class="order-category-order-form-input">
                     <h1 class="order-category-header">Condiments</h1>
                     <div class="order-items-container">
                         <div class="order-item">
@@ -167,7 +176,7 @@
                                     <span>$5.90</span>
                                 </p>
                             </label>
-                            <input id="ikanBilis120gQty" name="ikanBilis120gQty" type="number" value="0">
+                            <input id="ikanBilis120gQty" name="ikanBilis120gQty" type="number" placeholder="0">
                         </div>
                         <div class="order-item">
                             <label for="ikanBilisPeanuts200gQty">
@@ -179,7 +188,7 @@
                                     <span>$5.90</span>
                                 </p>
                             </label>
-                            <input id="ikanBilisPeanuts200gQty" name="ikanBilisPeanuts200gQty" type="number" value="0">
+                            <input id="ikanBilisPeanuts200gQty" name="ikanBilisPeanuts200gQty" type="number" placeholder="0">
                         </div>
                         <div class="order-item">
                             <label for="sambalChili250gQty">
@@ -191,7 +200,7 @@
                                     <span>$6.90</span>
                                 </p>
                             </label>
-                            <input id="sambalChili250gQty" name="sambalChili250gQty" type="number" value="0">
+                            <input id="sambalChili250gQty" name="sambalChili250gQty" type="number" placeholder="0">
                         </div>
                     </div>
                 </div>
