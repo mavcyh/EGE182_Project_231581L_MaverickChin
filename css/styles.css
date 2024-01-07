@@ -54,15 +54,6 @@
     font-family: Satisfy;
     src: url(../fonts/Satisfy/Satisfy-Regular.ttf);
 }
-@font-face {
-    font-family: Soviet-Style;
-    src: url(../fonts/Soviet_Style/soviet\ style.ttf)
-}
-@font-face {
-    font-family: Soviet-Style;
-    src: url(../fonts/Soviet_Style/soviet\ style\ italic.ttf);
-    font-style: italic;
-}
 * {
     padding: 0;
     margin: 0;
@@ -193,6 +184,7 @@ footer p {
     animation: parallax linear;
     animation-timeline: scroll(root);
 }
+/* Parallax scrolling effect for hero image */
 @keyframes parallax {
     from {
         transform: translateY(-120px)
@@ -216,8 +208,9 @@ footer p {
 }
 .homepage-order-online a {
     position: absolute;
-    top: 230px;
+    top: 220px;
     left: 50%;
+    font-size: 18px;
     transform: translateX(-50%);
 }
 .homepage-opening-promotion,
@@ -282,8 +275,6 @@ footer p {
     background-color: var(--lwab-red);
     color: var(--anti-flash-white);
 }
-
-
 /* HOME PAGE END*/
 
 /* MENU PAGE */
