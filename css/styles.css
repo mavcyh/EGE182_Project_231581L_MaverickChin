@@ -61,6 +61,7 @@
 }   
 html {
     scroll-snap-type: y mandatory;
+    zoom: 2;
 }
 body {
     position: relative;
@@ -68,6 +69,8 @@ body {
     margin: 0 auto;
     font-family: Gothic_A1, Arial, Helvetica, sans-serif;
     overflow-x: hidden;
+    border-left: 1px solid var(--gunmetal);
+    border-right: 1px solid var(--gunmetal);
 }
 .tesselated-background {
     background: url(../images/website_background_tesellation.jpg);
@@ -155,13 +158,13 @@ footer {
     position: fixed;
     bottom: 0;
     z-index: 1;
-    width: 1024px;
+    width: 1023px;
     background-color: var(--gunmetal);
 }
 footer p {
     color: white;
     font-weight: 300;
-    font-size: 6px;
+    font-size: 8px;
     text-align: center;
     padding: 2px;
 }
@@ -220,6 +223,19 @@ footer p {
     width: 80%;
     height: 210px;
     margin: 0 auto 20px auto;
+    animation: fade ease-in;
+    animation-timeline: view();
+    animation-range: cover 0% cover 20%;
+}
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 .homepage-opening-promotion-description,
 .homepage-register-now-description,
@@ -260,7 +276,13 @@ footer p {
 .homepage-learn-more-images img {
     height: 100%;
 }
-
+.homepage-opening-promotion-description img {
+    position: absolute;
+    width: 42px;
+    left: 10px;
+    top: 0;
+    filter: brightness(100%);
+}
 .homepage-action-button {
     text-decoration: none;
     background-color: var(--anti-flash-white);
