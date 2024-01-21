@@ -61,7 +61,6 @@
 }   
 html {
     scroll-snap-type: y mandatory;
-    zoom: 2;
 }
 body {
     position: relative;
@@ -76,6 +75,7 @@ body {
     background: url(../images/website_background_tesellation.jpg);
     background-size: 140px;
 }
+
 /* NAVBAR */
 nav {
     position: sticky;
@@ -158,7 +158,7 @@ footer {
     position: fixed;
     bottom: 0;
     z-index: 1;
-    width: 1023px;
+    width: 1024px;
     background-color: var(--gunmetal);
 }
 footer p {
@@ -223,11 +223,11 @@ footer p {
     width: 80%;
     height: 210px;
     margin: 0 auto 20px auto;
-    animation: fade ease-in;
+    animation: fade-zoom ease-in;
     animation-timeline: view();
     animation-range: cover 0% cover 20%;
 }
-@keyframes fade {
+@keyframes fade-zoom {
     from {
         opacity: 0;
         transform: scale(0.95);
@@ -308,7 +308,7 @@ footer p {
     background-color: rgba(128, 128, 128, 0.25);
     scroll-snap-align: start;
     scroll-margin-top: 54px;
-}   
+}
 .menu-category-header h1 {
     font-family: Satisfy;
     font-size: 30px;
@@ -323,6 +323,9 @@ footer p {
     justify-content: space-between;
     width: 70%;
     margin: 18px auto 50px auto;
+}
+.menu-items-container:last-child {
+    margin-bottom: 120px;
 }
 .menu-item {
     width: 30%;
@@ -452,6 +455,7 @@ form fieldset {
 label[for="collectionDate"], .dining-option p {
     display: block;
     margin-bottom: 6px;
+    cursor: pointer;
 }
 .dining-option label {
     position: relative;
@@ -500,7 +504,10 @@ label[for="takeaway"]:hover, input[value="takeaway"]:checked + label {
 /* Order Fieldset */
 .order-category-header {
     width: 80%;
-    margin: 0 auto;
+    padding: 1px 8px;
+    border: 1px solid grey;
+    background-color: rgba(128, 128, 128, 0.25);
+    margin: 20px auto 10px auto;
     font-family: Satisfy;
     font-size: 20px;
 }
@@ -561,8 +568,48 @@ label[for="takeaway"]:hover, input[value="takeaway"]:checked + label {
     bottom: 11px;
     right: 10px;
 }
-form button[type="submit"] {
-    width: 100%;
+.order-special-payment-submit-container {
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+}
+.special-requests {
+    flex: 3;
+}
+.special-requests label, .payment-method label {
+    display: block;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+.special-requests textarea {
+    resize: none;
+    font-family: Gothic_A1;
+    font-size: 10px;
+    padding: 2px;
+}
+.payment-method {
+    flex: 1
+}
+.payment-method select {
+    font-family: Gothic_A1;
+    padding: 2px;
+    width: 100px;
+    font-size: 10px;
+}
+button[type="submit"] {
+    height: 50px;
+    flex: 1;
+    align-self: center;
+    color: var(--anti-flash-white);
+    background-color: var(--imperial-red);
+    cursor: pointer;
+    border: 1px grey;
+    border-radius: 3px;
+    font-weight: 600;
+}
+button[type="submit"]:hover {
+    box-shadow: 1px 1px 12px lightgrey;
 }
 
 /* REGISTRATION PAGE */

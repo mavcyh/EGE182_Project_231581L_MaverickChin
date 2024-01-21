@@ -38,31 +38,31 @@
         </ul>
     </nav>
     <main>
-        <form method="get" action="https://jkorpela.fi/cgi-bin/echo.cgi">
+        <form method="post" action="https://jkorpela.fi/cgi-bin/echo.cgi">
             <div class="order-form-flex-container">
                 <fieldset class="contact-details-fieldset">
                     <legend>Contact Details</legend>
                     <div class="order-form-input">
                         <label for="name">
-                            <img src="images/Icons/icons8-person-96.png" alt="">
+                            <img src="images/Icons/icons8-person-96.png">
                             <span>Name</span>
                         </label>
                         <input id="name" name="name" type="text" pattern="[a-z A-Z]*" required>
                     </div>
                     <div class="order-form-input">
                         <label for="phoneNumber">
-                            <img src="images/Icons/icons8-phone-96.png" alt="">
+                            <img src="images/Icons/icons8-phone-96.png">
                             <span>Phone</span>
                         </label>
-                        <input id="phoneNumber" name="phoneNumber" type="tel" pattern=[89]\d{3}\s?\d{4}>
+                        <input id="phoneNumber" name="phoneNumber" type="tel" pattern=[89]\d{3}\s?\d{4} required>
                     </div>
                 </fieldset>
                 <fieldset class="collection-fieldset">
                     <legend>Collection</legend>
                     <div class="collection-date">
-                        <label for="collectionDate">Date and Time :</label>
-                        <input id="collectionDate" name="collectionDate" type="date">
-                        <input id="collectionTime" name="collectionTime" type="time" min="11:00:00" max="14:00:00" step="300">
+                        <label for="collectionDate">Date and Time (11am - 2pm):</label>
+                        <input id="collectionDate" name="collectionDate" type="date" required>
+                        <input id="collectionTime" name="collectionTime" type="time" min="11:00:00" max="14:00:00" required>
                     </div>
                     <div class="dining-option">
                         <p>Dining Option :</p>
@@ -92,7 +92,7 @@
                                 <span>(U.P. $6.00)</span>
                             </p>
                         </label>
-                        <input id="honeyGlazedQty" name="honeyGlazedQty" type="number" placeholder="0">
+                        <input id="honeyGlazedQty" name="honeyGlazedQty" type="number" placeholder="0" min="0">
                     </div>
                     <div class="order-item">
                         <label for="chickenCutletQty">
@@ -105,7 +105,7 @@
                                 <span>(U.P. $5.90)</span>
                             </p>
                         </label>
-                        <input id="chickenCutletQty" name="chickenCutletQty" type="number" placeholder="0">
+                        <input id="chickenCutletQty" name="chickenCutletQty" type="number" placeholder="0" min="0">
                     </div>
                     <div class="order-item">
                         <label for="3jointChickenWingQty">
@@ -118,7 +118,7 @@
                                 <span>(U.P. $6.30)</span>
                             </p>
                         </label>
-                        <input id="3jointChickenWingQty" name="3jointChickenWingQty" type="number" placeholder="0">
+                        <input id="3jointChickenWingQty" name="3jointChickenWingQty" type="number" placeholder="0" min="0">
                     </div>
                 </div>
                 <h1 class="order-category-header">Otah</h1>
@@ -134,7 +134,7 @@
                                 <span>(U.P. $0.90)</span>
                             </p>
                         </label>
-                        <input id="originalSpicyQty" name="originalSpicyQty" type="number" placeholder="0">
+                        <input id="originalSpicyQty" name="originalSpicyQty" type="number" placeholder="0" min="0">
                     </div>
                     <div class="order-item">
                         <label for="originalNonSpicyQty">
@@ -147,7 +147,7 @@
                                 <span>(U.P. $0.90)</span>
                             </p>
                         </label>
-                        <input id="originalNonSpicyQty" name="originalNonSpicyQty" type="number" placeholder="0">
+                        <input id="originalNonSpicyQty" name="originalNonSpicyQty" type="number" placeholder="0" min="0">
                     </div>
                     <div class="order-item">
                         <label for="bananaLeafFishQty">
@@ -160,54 +160,67 @@
                                 <span>(U.P. $1.90)</span>
                             </p>
                         </label>
-                        <input id="bananaLeafFishQty" name="bananaLeafFishQty" type="number" placeholder="0">
+                        <input id="bananaLeafFishQty" name="bananaLeafFishQty" type="number" placeholder="0" min="0">
                     </div>
                 </div>
-                <div class="order-category-order-form-input">
-                    <h1 class="order-category-header">Condiments</h1>
-                    <div class="order-items-container">
-                        <div class="order-item">
-                            <label for="ikanBilis120gQty">
-                                <div class="order-item-img-div">
-                                    <img src="images/Menu/ikan_bilis.jpg" alt="Ikan Bilis">
-                                </div>
-                                <p class="order-item-name">Ikan Bilis 120g</p>
-                                <p class="order-item-price">
-                                    <span>$5.90</span>
-                                </p>
-                            </label>
-                            <input id="ikanBilis120gQty" name="ikanBilis120gQty" type="number" placeholder="0">
-                        </div>
-                        <div class="order-item">
-                            <label for="ikanBilisPeanuts200gQty">
-                                <div class="order-item-img-div">
-                                    <img src="images/Menu/ikan_bilis_and_peanuts.jpg" alt="Ikan Bilis and Peanuts">
-                                </div>
-                                <p class="order-item-name">Ikan Bilis and Peanuts 200g</p>
-                                <p class="order-item-price">
-                                    <span>$5.90</span>
-                                </p>
-                            </label>
-                            <input id="ikanBilisPeanuts200gQty" name="ikanBilisPeanuts200gQty" type="number" placeholder="0">
-                        </div>
-                        <div class="order-item">
-                            <label for="sambalChili250gQty">
-                                <div class="order-item-img-div">
-                                    <img src="images/Menu/sambal_chili.jpg" alt="Sambal Chili">
-                                </div>
-                                <p class="order-item-name">Sambal Chili 250g</p>
-                                <p class="order-item-price">
-                                    <span>$6.90</span>
-                                </p>
-                            </label>
-                            <input id="sambalChili250gQty" name="sambalChili250gQty" type="number" placeholder="0">
-                        </div>
+                <h1 class="order-category-header">Condiments</h1>
+                <div class="order-items-container">
+                    <div class="order-item">
+                        <label for="ikanBilis120gQty">
+                            <div class="order-item-img-div">
+                                <img src="images/Menu/ikan_bilis.jpg" alt="Ikan Bilis">
+                            </div>
+                            <p class="order-item-name">Ikan Bilis 120g</p>
+                            <p class="order-item-price">
+                                <span>$5.90</span>
+                            </p>
+                        </label>
+                        <input id="ikanBilis120gQty" name="ikanBilis120gQty" type="number" placeholder="0" min="0">
                     </div>
+                    <div class="order-item">
+                        <label for="ikanBilisPeanuts200gQty">
+                            <div class="order-item-img-div">
+                                <img src="images/Menu/ikan_bilis_and_peanuts.jpg" alt="Ikan Bilis and Peanuts">
+                            </div>
+                            <p class="order-item-name">Ikan Bilis and Peanuts 200g</p>
+                            <p class="order-item-price">
+                                <span>$5.90</span>
+                            </p>
+                        </label>
+                        <input id="ikanBilisPeanuts200gQty" name="ikanBilisPeanuts200gQty" type="number" placeholder="0" min="0">
+                    </div>
+                    <div class="order-item">
+                        <label for="sambalChili250gQty">
+                            <div class="order-item-img-div">
+                                <img src="images/Menu/sambal_chili.jpg" alt="Sambal Chili">
+                            </div>
+                            <p class="order-item-name">Sambal Chili 250g</p>
+                            <p class="order-item-price">
+                                <span>$6.90</span>
+                            </p>
+                        </label>
+                        <input id="sambalChili250gQty" name="sambalChili250gQty" type="number" placeholder="0" min="0">
+                    </div>
+                </div>
+                <div class="order-special-payment-submit-container">
+                    <div class="special-requests">
+                        <label for="specialRequests">Special Requests:</label>
+                        <textarea name="specialRequests" id="specialRequests" cols="64" rows="3"></textarea>
+                    </div>
+                    <div class="payment-method">
+                        <label for="paymentMethod">Payment Method:</label>
+                        <select name="paymentMethod" id="paymentMethod">
+                            <option value="cash">Cash</option>
+                            <option value="paynow">PayNow (QR)</option>
+                            <option value="payWave">payWave (Card)</option>
+                        </select>
+                    </div>
+                    <button type="submit">Place<br>Order</button>
                 </div>
             </fieldset>
-            <button type="submit">Submit</button>
-        <div class="order-item"></form> </div>
+        </form>
     </main>
+    <div class="footer-padding"></div>
     <footer>
         <p>Copyright &copy; 2023-2024 Maverick Chin. All rights reserved.</p>
     </footer>
