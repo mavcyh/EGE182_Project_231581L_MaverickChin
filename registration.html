@@ -38,7 +38,78 @@
         </ul>
     </nav>
     <main>
-        
+        <form method="post" action="https://jkorpela.fi/cgi-bin/echo.cgi" class="registration-form">
+            <fieldset class="personal-details-fieldset">
+                <legend>Personal Details</legend>
+                <div class="form-input">
+                    <label for="name">
+                        <img src="images/Icons/icons8-person-96.png">
+                        <span>Name</span>
+                    </label>
+                    <input id="name" name="name" type="text" pattern="[a-z A-Z]{2,}" required>
+                </div>
+                <div class="gender-option">
+                    <input id="male" name="gender" value="male" type="radio" checked>
+                    <label for="male">
+                        <span>Male</span>
+                    </label>
+                    <input id="female" name="gender" value="female" type="radio">
+                    <label for="female">
+                        <span>Female</span>
+                    </label>
+                </div>
+                <div class="form-input">
+                    <label for="email">     
+                        <img src="images/Icons/icons8-email-96.png">
+                        <span>Email</span>
+                    </label>
+                    <input id="email" name="email" type="email" required>
+                </div>
+                <div class="form-input">
+                    <label for="phoneNumber">
+                        <img src="images/Icons/icons8-phone-96.png">
+                        <span>Phone</span>
+                    </label>
+                    <input id="phoneNumber" name="phoneNumber" type="tel" pattern="[89]\d{3}\s?\d{4}" title="Enter a Singaporean phone number." required>
+                </div>
+                <div class="form-input">
+                    <label for="homeAddress">
+                        <img src="images/Icons/icons8-address-96.png">
+                        <span>Home Address</span>
+                    </label>
+                    <input id="homeAddress" name="homeAddress" type="text" required>
+                    <label for="postalCode">
+                        <span>Postal Code</span>
+                    </label>
+                    <input id="postalCode" name="postalCode" type="text" pattern="\d{3}\s?\d{3}" required>
+                </div>
+                <div class="form-input">
+                    <label for="favouriteFood">
+                        <img src="images/Icons/icons8-rice-bowl-96.png">
+                        <span>Favourite Food</span>
+                    </label>
+                    <input id="favouriteFood" name="favouriteFood" type="text" required>
+                </div>
+            </fieldset>
+            <fieldset class="account-details-fieldset">
+                <legend>Account Details</legend>
+                <div class="form-input">
+                    <label for="loginID">
+                        <img src="images/Icons/icons8-key-96.png">
+                        <span>Login ID</span>
+                    </label>
+                    <input id="loginID" name="loginID" type="text" pattern="\w{3,}" title="Minimum 3 alphanumeric characters." required>
+                </div>
+                <div class="form-input">
+                    <label for="password">
+                        <img src="images/Icons/icons8-password-96.png">
+                        <span>Password</span>
+                    </label>
+                    <input id="password" name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.* ).{8,}" title="Minimum 8 characters. At least 1 lowercase, uppercase and number." required>
+                </div>
+                <button type="submit">Register!</button>
+            </fieldset>
+        </form>
     </main>
     <div class="footer-padding"></div>
     <footer>
